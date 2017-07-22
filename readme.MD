@@ -13,16 +13,16 @@
 
 ### Endpoints:
  ## Save :
-   * URL: `http://localhost:8181/register/person/save` 
+   * URL: `http://localhost:8282/register/person/save` 
    * Method: `POST`
    * Request Object: `Person (id=1, name='concur')`
   
  ## Get Person:
-   * URL: `http://localhost:8181/register/get/1` 
+   * URL: `http://localhost:8282/register/get/1` 
    * Method: `GET`
   
  ### Get All Persons
-    * URL: `http://localhost:8181/register/get/all` 
+    * URL: `http://localhost:8282/register/get/all` 
     * Method: `GET`
     
     
