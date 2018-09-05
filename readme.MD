@@ -13,7 +13,7 @@
 
 ### Endpoints:
  ## Save :
-   * URL: `http://localhost:8282/register/person/save` 
+   * URL: `http://localhost:8282/register/user/save`
    * Method: `POST`
    * Request Object: `Person (id=1, name='concur')`
   
