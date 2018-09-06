@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout Page</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+<body>
+<form id="checkoutOrder">
+    <label>ProductName</label>
+    <input type="text" id="productName"/><br/>
+    <label>quantity</label>
+    <input type="text" id="quantity"/><br/>
+    <input type="button" id="addProduct" value="Add"/>
+    <br/>
+    <input type="button" id="checkout" value="checkout"/>
+</form>
+
+<div id="orderInvoice" style="display: none;">
+    <h4> Order Successfully checkedout!!!!</h4>
+    <ul id="orderInvoiceList"></ul>
+    <label>TotalAmount</label>
+    <span id="orderTotalAmount"></span>
+</div>
+
+<a href="welcome.html">Back</a>
+</body>
+</html>

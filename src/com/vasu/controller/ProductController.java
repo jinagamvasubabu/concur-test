@@ -36,11 +36,20 @@ public class ProductController {
     public String add(@RequestBody Product product) {
         log.info(product.toString());
         try {
-            productRepository.save(product);
-            return "Product Added!!!";
+
+            Product product1 = productRepository.findByProductNameIgnoreCaseContaining(product.getProductName());
+
+            if (product1 == null) {
+                productRepository.save(product);
+            } else {
+                product1.setQuantity(product.getQuantity());
+                product1.setPrice(product.getPrice());
+                productRepository.save(product1);
+            }
+            return "Inventory updated!!!";
         } catch (Exception e) {
             log.error(e.getMessage());
-            return "Error: Cannot add product!!!!";
+            return "Error: Cannot change product!!!!";
         }
     }
 

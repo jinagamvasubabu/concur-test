@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -72,17 +71,36 @@ public class InvoiceController {
         try {
             OrderInvoice result = new OrderInvoice();
             List<OrderLineItems> orderLineItemsList = orderLineItemRepository.findAll();
-
+            HashMap<Long, List<OrderLineItems>> productMap = new HashMap<>();
             List<ProductInvoice> productInvoiceList = new ArrayList<>();
             for (OrderLineItems item : orderLineItemsList) {
-                Product baseProduct = productRepository.findOne(item.getProductId());
+
+                if (productMap.containsKey(item.getProductId())) {
+                    productMap.get(item.getProductId()).add(item);
+                } else {
+                    productMap.put(item.getProductId(), new ArrayList<>(Arrays.asList(item)));
+                }
+
+            }
+
+
+            for(Map.Entry<Long, List<OrderLineItems>> e: productMap.entrySet()) {
+                Product baseProduct = productRepository.findOne(e.getKey());
+                List<OrderLineItems> orderLineItems = e.getValue();
 
                 ProductInvoice invoice = new ProductInvoice();
-                invoice.setProductId(item.getProductId());
-                invoice.setProductName(item.getProductName());
-                invoice.setQuantity(item.getQuantity());
-                invoice.setTotalAmount((double) (item.getQuantity() * baseProduct.getPrice()));
+                invoice.setProductId(orderLineItems.get(0).getProductId());
+                invoice.setProductName(orderLineItems.get(0).getProductName());
+
+                Integer totalQuantity = 0;
+                for (OrderLineItems item: orderLineItems) {
+                    totalQuantity += item.getQuantity();
+                }
+
+                invoice.setQuantity(totalQuantity);
+                invoice.setTotalAmount((double) (orderLineItems.get(0).getQuantity() * baseProduct.getPrice()));
                 productInvoiceList.add(invoice);
+
             }
 
             Double totalAmount = 0.0;
