@@ -1,18 +1,26 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
+    <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
+
 </head>
 <body>
 
-<h1>Welcome!!!!</h1>
-<form id="login">
-    <label>UserName</label>
-    <input type="text" id="username"/><br/>
-    <label>Password</label>
-    <input type="password" id="password"/><br/>
-    <input type="button" id="loginMe" value="Login"/>
-    <h4><a href="html/signup.html" name="signup">signup</a></h4>
+<form id="signup">
+    <div class="box">
+        <h1>Beru's Super Market</h1>
+
+        <input type="text" name="username" id="username" placeholder="UserName" class="email"/>
+        <input type="password" name="email" id="password" placeholder="Password"
+               class="email"/>
+        <a href="#" id="loginMe">
+            <div class="btn">Sign In</div>
+        </a> <!-- End Btn -->
+        <a href="#" id="createMe">
+            <div id="btn2">Sign Up</div>
+        </a>
+    </div>
 </form>
 
 

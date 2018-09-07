@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Checkout Page</title>
+    <link rel="stylesheet" href="../css/index.css">
     <script src="../js/jquery.js"></script>
     <script src="../js/main.js"></script>
 </head>
@@ -18,11 +19,25 @@
 </form>
 
 <div id="orderInvoice" style="display: none;">
-    <h4> Order Successfully checkedout!!!!</h4>
-    <ul id="orderInvoiceList"></ul>
+    <table id="orderInvoiceList">
+        <thead>
+        <tr>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
     <label>TotalAmount</label>
     <span id="orderTotalAmount"></span>
 </div>
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+
 
 <a href="welcome.html">Back</a>
 </body>

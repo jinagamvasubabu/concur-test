@@ -156,9 +156,9 @@ function renderStoreInvoice(data) {
 }
 
 function renderOrderInvoice(data) {
-    $('#orderInvoiceList li').remove();
     $.each(data.productList, function(index, product) {
-        $('#orderInvoiceList').append('<li>'+product.productName+','+product.quantity+','+product.totalAmount+'</li>');
+        var markup = "<tr><td>"+product.productName+"</td><td>" + product.quantity + "</td><td>" + product.totalAmount + "</td></tr>";
+        $("#orderInvoiceList").append(markup);
     });
 
     $("#orderTotalAmount").html(data.totalAmount);
@@ -266,6 +266,10 @@ function changeProductToJson() {
             "price": $('#price').val()
         });
 }
+
+
+
+
 
 
 
