@@ -8,17 +8,30 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
+
 <form id="search">
-    <label>ProductName</label>
-    <input type="text" id="productName"/><br/>
-    <input type="button" id="searchProduct" value="Submit"/>
+    <div class="box">
+        <h1>Search stock</h1>
+        <input type="text" id="productName" placeholder="productName" class="email"/><br/>
+        <a href="#" id="searchProduct"><div class="btn" style="margin-left:26%">Submit</div></a>
+    </div>
 </form>
-<div id="searchDiv" style="display: none;">
-    <label>ProductName</label>
-    <span id="searchProductName"></span>
-    <span id="searchProductQuantity"></span>
-    <span id="searchProductPrice"></span>
+
+
+<div id="searchDiv" style="display: none;margin-left:12%;">
+    <table id="searchInvoiceList" style="background-color:white">
+        <thead>
+        <tr>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
-<a href="welcome.html">Back</a>
+<br/><br/><br/><br/><br/><br/><br/>
+<a href="welcome.html"><div class="btn" style="margin-left:45%;background-color:white;color:black">Back</div></a>
 </body>
 </html>

@@ -9,12 +9,28 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
-<input type="button" id="getStockInvoice" value="SoldStockDetail"/>
+<h1>Beru's Super Market!!!</h1>
+
+
 <div id="storeInvoice" style="display: none;">
-    <ul id="storeInvoiceList"></ul>
-    <label>TotalAmount</label>
-    <span id="storeTotalAmount"></span>
+    <h4>Stock Detail</h4>
+    <table id="storeInvoiceList" style="background-color:white;margin-left:40%">
+        <thead>
+        <tr>
+            <th>ProductName</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <span style="background-color:white">TotalAmount</span>
+    <span style="background-color:white" id="storeTotalAmount"></span>
 </div>
-<a href="welcome.html">Back</a>
+<a href="#" id="getStockInvoice" style="background-color:white"><div class="btn" style="margin-left:45%">Submit</div></a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<a href="welcome.html"><div class="btn" style="color:black;background-color:white;margin-left:45%">Back</div></a>
 </body>
 </html>

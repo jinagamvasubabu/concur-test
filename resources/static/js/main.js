@@ -1,6 +1,6 @@
 
-var rootURL = "http://localhost:8081/billing/api";
-var webURL = "http://localhost:8081/billing"
+var rootURL = "http://localhost:8082/billing/api";
+var webURL = "http://localhost:8082/billing"
 
 var productsToBeCreated = [];
 var orderId = null;
@@ -137,18 +137,16 @@ function invokeStoreInvoice() {
 }
 
 function renderSearchResults(data) {
-    $("#searchDiv").show();
-    $("#searchProductName").html(data.productName);
-    $("#searchProductQuantity").html(data.quantity);
-    $("#searchProductName").html(data.price);
-
+    var markup = "<tr><td>"+data.productName+"</td><td>" + data.quantity + "</td><td>" + data.price + "</td></tr>";
+    $("#searchInvoiceList").append(markup);
     $("#searchDiv").show();
 }
 
 function renderStoreInvoice(data) {
-    $('#storeInvoiceList li').remove();
+
     $.each(data.productList, function(index, product) {
-        $('#storeInvoiceList').append('<li>'+product.productName+','+product.quantity+','+product.totalAmount+'</li>');
+        var markup = "<tr><td>"+product.productName+"</td><td>" + product.quantity + "</td><td>" + product.totalAmount + "</td></tr>";
+        $("#storeInvoiceList").append(markup);
     });
 
     $("#storeTotalAmount").html(data.totalAmount);
@@ -164,10 +162,6 @@ function renderOrderInvoice(data) {
     $("#orderTotalAmount").html(data.totalAmount);
     $("#orderInvoice").show();
 }
-
-
-
-
 
 function checkAndAddProduct() {
     $("#orderInvoice").hide();

@@ -9,17 +9,17 @@
 </head>
 <body>
 <form id="checkoutOrder">
-    <label>ProductName</label>
-    <input type="text" id="productName"/><br/>
-    <label>quantity</label>
-    <input type="text" id="quantity"/><br/>
-    <input type="button" id="addProduct" value="Add"/>
-    <br/>
-    <input type="button" id="checkout" value="checkout"/>
+    <div class ="box">
+        <h1>Checkout Order</h1>
+        <input type="text" id="productName" placeholder="productName" class="email"/><br/>
+        <input type="text" id="quantity" placeholder="quantity" class="email"/><br/>
+        <a href="#" id="addProduct"><div class="btn">Add Product</div></a>
+        <a href="#" id="checkout"><div class="btn">Checkout Order</div></a>
+    </div>
 </form>
 
-<div id="orderInvoice" style="display: none;">
-    <table id="orderInvoiceList">
+<div id="orderInvoice" style="display: none; margin-left:12%">
+    <table id="orderInvoiceList" style="background-color:white">
         <thead>
         <tr>
             <th>ProductName</th>
@@ -31,14 +31,11 @@
         </tbody>
     </table>
 
-    <label>TotalAmount</label>
-    <span id="orderTotalAmount"></span>
+    <span style="background-color:white;margin-left:-15%">TotalAmount</span>
+    <span style="background-color:white" id="orderTotalAmount"></span>
 </div>
 
 
-<br/><br/><br/><br/><br/><br/><br/>
-
-
-<a href="welcome.html">Back</a>
+<a href="welcome.html"><div class="btn" style="margin-left:45%;color:black;background-color:white;">Back</div></a>
 </body>
 </html>
